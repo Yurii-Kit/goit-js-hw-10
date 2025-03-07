@@ -58,9 +58,16 @@ startButton.addEventListener('click', () => {
       iziToast.success({
         title: 'Success',
         message: 'Time is up!',
+        position: 'topRight',
       });
       startButton.disabled = true;
       datePicker.disabled = false;
+      // Встановлюємо значення на 0
+      document.querySelector('[data-days]').textContent = '00';
+      document.querySelector('[data-hours]').textContent = '00';
+      document.querySelector('[data-minutes]').textContent = '00';
+      document.querySelector('[data-seconds]').textContent = '00';
+      return;
     }
     const { days, hours, minutes, seconds } = convertMs(deltaTime);
 

@@ -31,6 +31,7 @@ li > a {
 /* #endregion index */
 
 /* #region timer */
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -57,7 +58,7 @@ li > a {
 #datetime-picker:active {
   border: 1px solid #4e75ff;
 }
-
+.back-btn,
 #start-button {
   border-radius: 8px;
   padding: 8px 16px;
@@ -108,4 +109,22 @@ li > a {
   line-height: 1.5;
   color: #2e2f42;
   text-transform: uppercase;
+}
+/* #endregion timer */
+
+.back-btn {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  background: #09d0eb;
+  cursor: pointer;
+  text-decoration: none;
+}
+.back-btn:hover {
+  background: #037294;
+}
+.back-btn::before {
+  content: '← ';
+  font-weight: bold;
 }
