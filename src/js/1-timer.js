@@ -6,6 +6,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 // Додаткові стилі
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import errorIcon from '../img/error.png';
 
 // робимо кнопку неактивною
 const startButton = document.querySelector('#start-button');
@@ -36,7 +37,7 @@ const options = {
         titleColor: '#fff',
         close: true,
         closeColor: '#fff',
-        iconUrl: './img/error.png',
+        iconUrl: errorIcon,
       });
       startButton.disabled = true;
       return;

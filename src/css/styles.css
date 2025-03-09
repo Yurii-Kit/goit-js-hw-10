@@ -149,9 +149,14 @@ li > a {
   border: 1px solid #808080;
   border-radius: 4px;
   padding: 16px 8px;
+  transition: border-color 300ms ease-in-out;
 }
-.delay-input:active {
-  border: 1px solid #4e75ff;
+.delay-input:hover {
+  border-color: #000;
+}
+.delay-input:focus {
+  border-color: #4e75ff;
+  outline: none;
 }
 
 fieldset {

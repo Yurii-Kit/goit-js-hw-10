@@ -196,3 +196,33 @@ return { days, hours, minutes, seconds }; // Повертаємо об'єкт з
 function addLeadingZero(value) { // Функція для додавання нуля перед
 однозначними числами return String(value).padStart(2, '0'); // Додаємо нуль
 перед однозначними числами }
+
+form.addEventListener('submit', event => { event.preventDefault();
+
+const currentInputValue = parseInt(input.value, 10); const selectedState =
+form.state.value;
+
+// Валідація if (!validateForm(currentInputValue, selectedState)) { return; }
+
+// Створюємо проміс const promise = createPromise(currentInputValue,
+selectedState);
+
+// Обробка промісу promise .then(handleSuccess) .catch(handleError); });
+
+// Валідація function validateForm(inputValue, radioState) { if (!inputValue ||
+inputValue <= 0) { iziToast.show({ ...cautionIconMessage, message: 'Please enter
+a positive delay value in milliseconds.' }); return false; } if (!radioState) {
+iziToast.show({ ...cautionIconMessage, message: 'Please select a promise state.'
+}); return false; } return true; }
+
+// Створення промісу function createPromise(delay, state) { return new
+Promise((resolve, reject) => { setTimeout(() => { if (state === 'fulfilled') {
+resolve(delay); } else { reject(delay); } }, delay); }); }
+
+// Обробка успіху function handleSuccess(delay) { const message =
+`✅ Fulfilled promise in ${delay}ms`; iziToast.success({ ...successIconMessage,
+message }); form.reset(); }
+
+// Обробка помилок function handleError(delay) { const message =
+`❌ Rejected promise in ${delay}ms`; iziToast.error({ ...errorIconMessage,
+message }); form.reset(); }

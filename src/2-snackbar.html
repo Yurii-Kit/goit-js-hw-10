@@ -18,14 +18,19 @@
     <form class="form">
       <label class="delay-label">
         Delay (ms)
-        <input class="delay-input" type="number" name="delay" required />
+        <input
+          class="delay-input js-delay-input"
+          type="number"
+          name="delay"
+          required
+        />
       </label>
 
       <fieldset>
         <legend>State</legend>
         <label class="state-label">
           <input
-            class="state-input"
+            class="state-input js-state-input"
             type="radio"
             name="state"
             value="fulfilled"
@@ -35,7 +40,7 @@
         </label>
         <label class="state-label">
           <input
-            class="state-input"
+            class="state-input js-state-input"
             type="radio"
             name="state"
             value="rejected"
@@ -45,7 +50,9 @@
         </label>
       </fieldset>
 
-      <button class="form-btn" type="submit">Create notification</button>
+      <button class="form-btn js-form-button" type="submit">
+        Create notification
+      </button>
     </form>
 
     <a class="back-btn" href="./index.html">BACK</a>
